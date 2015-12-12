@@ -1,0 +1,18 @@
+\\csfs\home$\bojcov_a_a\profile\my documents\visual studio 2010\Projects\Parametric_Function\Parametric_Function\bin\Debug\Parametric_Function.exe
+\\csfs\home$\bojcov_a_a\profile\my documents\visual studio 2010\Projects\Parametric_Function\Parametric_Function\bin\Debug\Parametric_Function.pdb
+\\csfs\home$\bojcov_a_a\profile\my documents\visual studio 2010\Projects\Parametric_Function\Parametric_Function\obj\x86\Debug\ResolveAssemblyReference.cache
+\\csfs\home$\bojcov_a_a\profile\my documents\visual studio 2010\Projects\Parametric_Function\Parametric_Function\obj\x86\Debug\Parametric_Function.Form1.resources
+\\csfs\home$\bojcov_a_a\profile\my documents\visual studio 2010\Projects\Parametric_Function\Parametric_Function\obj\x86\Debug\Parametric_Function.Properties.Resources.resources
+\\csfs\home$\bojcov_a_a\profile\my documents\visual studio 2010\Projects\Parametric_Function\Parametric_Function\obj\x86\Debug\GenerateResource.read.1.tlog
+\\csfs\home$\bojcov_a_a\profile\my documents\visual studio 2010\Projects\Parametric_Function\Parametric_Function\obj\x86\Debug\GenerateResource.write.1.tlog
+\\csfs\home$\bojcov_a_a\profile\my documents\visual studio 2010\Projects\Parametric_Function\Parametric_Function\obj\x86\Debug\Parametric_Function.exe
+\\csfs\home$\bojcov_a_a\profile\my documents\visual studio 2010\Projects\Parametric_Function\Parametric_Function\obj\x86\Debug\Parametric_Function.pdb
+C:\Users\Андрей\Desktop\Parametric_Function\Parametric_Function\obj\x86\Debug\Parametric_Function.exe
+C:\Users\Андрей\Desktop\Parametric_Function\Parametric_Function\obj\x86\Debug\Parametric_Function.pdb
+C:\Users\Андрей\Desktop\Parametric_Function\Parametric_Function\obj\x86\Debug\Parametric_Function.csprojResolveAssemblyReference.cache
+C:\Users\Андрей\Desktop\Parametric_Function\Parametric_Function\obj\x86\Debug\Parametric_Function.Form1.resources
+C:\Users\Андрей\Desktop\Parametric_Function\Parametric_Function\obj\x86\Debug\Parametric_Function.Properties.Resources.resources
+C:\Users\Андрей\Desktop\Parametric_Function\Parametric_Function\obj\x86\Debug\Parametric_Function.csproj.GenerateResource.Cache
+C:\Users\Андрей\Desktop\Parametric_Function\Parametric_Function\bin\Debug\Parametric_Function.exe
+C:\Users\Андрей\Desktop\Parametric_Function\Parametric_Function\bin\Debug\Parametric_Function.pdb
+C:\Users\Андрей\Desktop\Parametric_Function\Parametric_Function\obj\x86\Debug\Parametric_Function.FormTree.resources
