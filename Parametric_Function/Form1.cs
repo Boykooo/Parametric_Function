@@ -9,30 +9,28 @@ using System.Windows.Forms;
 
 namespace Parametric_Function
 {
-    public partial class Form1 : Form
+    public partial class Form1 : Form, IForm
     {
-        //private MyTree X, Y;
-        //private Paint draw;
         private ActForm act;
         public Form1()
         {
             InitializeComponent();
             //Y = new MyTree();
             //draw = new Paint(TreePic.Width, TreePic.Height);
-            act = new ActForm(TreePic.Width, TreePic.Height);
+            act = new ActForm(PicBox.Width, PicBox.Height, this);
         }
         private void Form1_Load(object sender, EventArgs e)
         {
         }
         private void Parsing_Click(object sender, EventArgs e)
         {
-            //X = new MyTree();
-            //X.Parser(XInput.Text);
             try
             {
-                act.XParsing(XInput.Text);
-                //TreePic.Image = draw.Draw(X.top);
-                //Aswer.Text = X.Operation(X.top).ToString();
+                string x = XInput.Text.Replace(" ", "");
+                string y = YInput.Text.Replace(" ", "");
+                x = x.ToLower();
+                y = y.ToLower();
+                act.Parsing(x, y);
             }
             catch
             {
@@ -46,6 +44,10 @@ namespace Parametric_Function
         private void YTree_Click(object sender, EventArgs e)
         {
             act.ShowTree(Expr.Y);
+        }
+        public void ReDraw(Bitmap bt)
+        {
+            PicBox.Image = bt;
         }
     }
 }

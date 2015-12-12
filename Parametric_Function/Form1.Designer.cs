@@ -33,11 +33,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.YInput = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.TreePic = new System.Windows.Forms.PictureBox();
+            this.PicBox = new System.Windows.Forms.PictureBox();
             this.XTree = new System.Windows.Forms.Button();
             this.YTree = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.TreePic)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PicBox)).BeginInit();
             this.SuspendLayout();
             // 
             // XInput
@@ -47,6 +47,7 @@
             this.XInput.Name = "XInput";
             this.XInput.Size = new System.Drawing.Size(131, 29);
             this.XInput.TabIndex = 0;
+            this.XInput.Text = "cos(3*t+1)";
             // 
             // label2
             // 
@@ -65,6 +66,7 @@
             this.YInput.Name = "YInput";
             this.YInput.Size = new System.Drawing.Size(131, 29);
             this.YInput.TabIndex = 2;
+            this.YInput.Text = "sin(t)";
             // 
             // button1
             // 
@@ -77,14 +79,14 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.Parsing_Click);
             // 
-            // TreePic
+            // PicBox
             // 
-            this.TreePic.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TreePic.Location = new System.Drawing.Point(12, 12);
-            this.TreePic.Name = "TreePic";
-            this.TreePic.Size = new System.Drawing.Size(834, 573);
-            this.TreePic.TabIndex = 6;
-            this.TreePic.TabStop = false;
+            this.PicBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PicBox.Location = new System.Drawing.Point(12, 12);
+            this.PicBox.Name = "PicBox";
+            this.PicBox.Size = new System.Drawing.Size(834, 573);
+            this.PicBox.TabIndex = 6;
+            this.PicBox.TabStop = false;
             // 
             // XTree
             // 
@@ -124,7 +126,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.YTree);
             this.Controls.Add(this.XTree);
-            this.Controls.Add(this.TreePic);
+            this.Controls.Add(this.PicBox);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.YInput);
@@ -132,7 +134,7 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.TreePic)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PicBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -144,7 +146,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox YInput;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.PictureBox TreePic;
+        private System.Windows.Forms.PictureBox PicBox;
         private System.Windows.Forms.Button XTree;
         private System.Windows.Forms.Button YTree;
         private System.Windows.Forms.Label label1;

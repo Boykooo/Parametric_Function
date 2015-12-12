@@ -161,6 +161,87 @@ namespace Parametric_Function
                 func == "ln"
                 ;
         }
+        private bool CheckOper(string key)
+        {
+            return
+                key == "+" ||
+                key == "-" ||
+                key == "*" ||
+                key == "/" ||
+                key == "^"
+            ;
+        }
+        public double GetValue(int value)
+        {
+            return Operation(Top, value);
+        }
+        private double Operation(Node q, int value)
+        {
+            if (q != null)
+            {
+                double key = 0;
+                if (!CheckFunc(q.key.ToString()) && !CheckOper(q.key.ToString()) && !Double.TryParse(q.key.ToString(), out key))
+                {
+                    key = value;
+                }
+                else
+                {
+                    if (Double.TryParse(q.key.ToString(), out key))
+                    { }
+                }
+                switch (q.key.ToString())
+                {
+                    case "+":
+                        return Operation(q.left, value) + Operation(q.right, value);
+                    case "-":
+                        return Operation(q.left, value) - Operation(q.right, value);
+                    case "*":
+                        return Operation(q.left, value) * Operation(q.right, value);
+                    case "/":
+                        return Operation(q.left, value) / Operation(q.right, value);
+                    case "%":
+                        return Operation(q.left, value) % Operation(q.right, value);
+                    case "^":
+                        return Math.Pow(Operation(q.left, value), Operation(q.right, value));
+                    default:
+                        if (CheckFunc(q.key.ToString()))
+                        {
+                            return TrigGo(q.key.ToString(), q.right, value);
+                        }
+                        else return key;
+                }
+            }
+            return 1;
+        }
+        private double TrigGo(string s, Node q, int value)
+        {
+            double y = 0;
+            double x = Operation(q, value);
+            switch (s)
+            {
+                case "cos":
+                    return Math.Cos(x);
+                case "sin":
+                    return Math.Sin(x);
+                case "tg":
+                    return Math.Tan(x);
+                case "ctg":
+                    return 1 / Math.Tan(x);
+                case "arccos":
+                    return Math.Acos(x);
+                case "arcsin":
+                    return Math.Asin(x);
+                case "arctg":
+                    return Math.Atan(x);
+                case "arcctg":
+                    return 1 / Math.Atan(x);
+                case "ln":
+                    return Math.Log(x);
+                default:
+                    throw new Exception();
+            }
+            return 0;
+        }
     }
 }
 

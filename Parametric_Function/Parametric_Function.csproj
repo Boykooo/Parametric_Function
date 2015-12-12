@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ActForm.cs" />
+    <Compile Include="BuildGraph.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -59,6 +60,7 @@
     <Compile Include="FormTree.Designer.cs">
       <DependentUpon>FormTree.cs</DependentUpon>
     </Compile>
+    <Compile Include="IForm.cs" />
     <Compile Include="Magic.cs" />
     <Compile Include="Node.cs" />
     <Compile Include="Paint.cs" />

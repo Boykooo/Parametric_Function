@@ -9,25 +9,35 @@ namespace Parametric_Function
     public enum Expr { X, Y }
     class ActForm
     {
+        private BuildGraph graph;
         private FormTree tree;
         private TreeParsing Xpars;
         private TreeParsing Ypars;
-        private Paint draw; 
-        public ActForm(int wh, int ht)
+        private Paint draw;
+        private IForm form;
+        public ActForm(int wh, int ht, IForm form)
         {
             draw = new Paint(wh, ht);
             Xpars = new TreeParsing();
             Ypars = new TreeParsing();
+            graph = new BuildGraph();
+            this.form = form;
         }
-        public void XParsing(string expr)
+        private void XParsing(string expr)
         {
             Xpars = new TreeParsing();
             Xpars.StartParsing(expr);
         }
-        public void YParsing(string expr)
+        private void YParsing(string expr)
         {
             Ypars = new TreeParsing();
             Ypars.StartParsing(expr);
+        }
+        public void Parsing(string X, string Y)
+        {
+            XParsing(X);
+            YParsing(Y);
+            form.ReDraw(draw.DrawGraph(graph.Build(Xpars, Ypars)));
         }
         public void ShowTree(Expr ex)
         {
@@ -35,17 +45,13 @@ namespace Parametric_Function
             switch (ex)
             {
                 case Expr.X:
-                    tree.RePic(draw.Draw(Xpars.Top));
+                    tree.RePic(draw.DrawTree(Xpars.Top));
                     break;
                 case Expr.Y:
-                    tree.RePic(draw.Draw(Ypars.Top));
+                    tree.RePic(draw.DrawTree(Ypars.Top));
                     break;
             }
             tree.Show();
-        }
-        public Bitmap GetYPicture()
-        {
-            return draw.Draw(Ypars.Top);
         }
     }
 }
