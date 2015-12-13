@@ -10,7 +10,7 @@ namespace Parametric_Function
     class ActForm
     {
         private BuildGraph graph;
-        private FormTree tree;
+        private FormTree formTtree;
         private TreeParsing Xpars;
         private TreeParsing Ypars;
         private Paint draw;
@@ -57,17 +57,17 @@ namespace Parametric_Function
         }
         public void ShowTree(Expr ex)
         {
-            tree = new FormTree();
+            formTtree = new FormTree();
             switch (ex)
             {
                 case Expr.X:
-                    tree.RePic(draw.DrawTree(Xpars.Top));
+                    formTtree.RePic(draw.DrawTree(Xpars.Top));
                     break;
                 case Expr.Y:
-                    tree.RePic(draw.DrawTree(Ypars.Top));
+                    formTtree.RePic(draw.DrawTree(Ypars.Top));
                     break;
             }
-            tree.Show();
+            formTtree.Show();
         }
     }
 }

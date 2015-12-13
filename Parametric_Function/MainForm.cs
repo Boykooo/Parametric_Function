@@ -49,7 +49,14 @@ namespace Parametric_Function
         }
         private void trackBar1_Scroll(object sender, EventArgs e)
         {
-            act.Scale = trackBar1.Value;
+            try
+            {
+                act.Scale = trackBar1.Value;
+            }
+            catch
+            {
+                MessageBox.Show("Ошибка");
+            }
         }
         private void PicBox_MouseMove(object sender, MouseEventArgs e)
         {

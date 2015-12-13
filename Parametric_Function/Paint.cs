@@ -63,8 +63,7 @@ namespace Parametric_Function
             {
                 g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
                 g.Clear(Color.White);
-                g.DrawLine(Pens.Black, new Point(0, center.Y), new Point(center.X * 2, center.Y));
-                g.DrawLine(Pens.Black, new Point(center.X, 0), new Point(center.X, center.Y * 2));
+                DrawAxis(g);
                 for (int i = 0; i < scalePoint.Length; i++)
                 {
                     scalePoint[i].X *= scale;
@@ -72,11 +71,14 @@ namespace Parametric_Function
                     scalePoint[i].X += center.X;
                     scalePoint[i].Y += center.Y;
                 }
-
                 g.DrawCurve(penGraph, scalePoint);
-
             }
             return mainBT;
+        }
+        private void DrawAxis(Graphics g)
+        {
+            g.DrawLine(Pens.Black, new Point(0, center.Y), new Point(center.X * 2, center.Y));
+            g.DrawLine(Pens.Black, new Point(center.X, 0), new Point(center.X, center.Y * 2));
         }
     }
 }
