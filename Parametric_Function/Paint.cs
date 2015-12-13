@@ -68,11 +68,13 @@ namespace Parametric_Function
                 for (int i = 0; i < scalePoint.Length; i++)
                 {
                     scalePoint[i].X *= scale;
-                    scalePoint[i].Y *= scale;
+                    scalePoint[i].Y *= -scale; // перевод в адекватные координаты
                     scalePoint[i].X += center.X;
                     scalePoint[i].Y += center.Y;
                 }
+
                 g.DrawCurve(penGraph, scalePoint);
+
             }
             return mainBT;
         }

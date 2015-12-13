@@ -95,6 +95,7 @@
             this.PicBox.Size = new System.Drawing.Size(829, 573);
             this.PicBox.TabIndex = 6;
             this.PicBox.TabStop = false;
+            this.PicBox.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PicBox_MouseMove);
             // 
             // XTree
             // 
@@ -195,7 +196,7 @@
             this.StepBox.TabIndex = 17;
             this.StepBox.Text = "0,1";
             // 
-            // Form1
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -215,7 +216,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.YInput);
             this.Controls.Add(this.XInput);
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.Text = "График параметрической функции";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.PicBox)).EndInit();

@@ -61,7 +61,6 @@
       <DependentUpon>FormTree.cs</DependentUpon>
     </Compile>
     <Compile Include="IForm.cs" />
-    <Compile Include="Magic.cs" />
     <Compile Include="Node.cs" />
     <Compile Include="Paint.cs" />
     <Compile Include="Program.cs" />

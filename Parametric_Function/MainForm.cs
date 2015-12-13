@@ -51,6 +51,10 @@ namespace Parametric_Function
         {
             act.Scale = trackBar1.Value;
         }
+        private void PicBox_MouseMove(object sender, MouseEventArgs e)
+        {
+            Text = e.X + ";" + e.Y;
+        }
     }
 }
 /*
