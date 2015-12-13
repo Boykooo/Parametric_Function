@@ -9,10 +9,10 @@ using System.Windows.Forms;
 
 namespace Parametric_Function
 {
-    public partial class Form1 : Form, IForm
+    public partial class MainForm : Form, IForm
     {
         private ActForm act;
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
             act = new ActForm(PicBox.Width, PicBox.Height, this);
@@ -53,3 +53,8 @@ namespace Parametric_Function
         }
     }
 }
+/*
+        Сердце
+        x = 16*sin(t)^3
+        t = 13*cos(t)-5*cos(2*t)-2*cos(3*t)-cos(4*t)
+*/

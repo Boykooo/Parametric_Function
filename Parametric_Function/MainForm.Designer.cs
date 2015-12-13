@@ -1,6 +1,6 @@
 ﻿namespace Parametric_Function
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.XInput = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.YInput = new System.Windows.Forms.TextBox();
@@ -135,7 +135,7 @@
             this.trackBar1.Orientation = System.Windows.Forms.Orientation.Vertical;
             this.trackBar1.Size = new System.Drawing.Size(45, 495);
             this.trackBar1.TabIndex = 11;
-            this.trackBar1.Value = 30;
+            this.trackBar1.Value = 10;
             this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
             // 
             // label3
@@ -216,7 +216,7 @@
             this.Controls.Add(this.YInput);
             this.Controls.Add(this.XInput);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "График параметрической функции";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.PicBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();

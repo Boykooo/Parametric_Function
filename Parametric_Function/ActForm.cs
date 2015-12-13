@@ -34,7 +34,7 @@ namespace Parametric_Function
             Ypars = new TreeParsing();
             graph = new BuildGraph();
             this.form = form;
-            scale = 30;
+            scale = 10;
         }
         private void XParsing(string expr)
         {
