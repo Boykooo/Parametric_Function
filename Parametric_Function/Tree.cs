@@ -171,11 +171,11 @@ namespace Parametric_Function
                 key == "^"
             ;
         }
-        public double GetValue(int value)
+        public double GetValue(double value)
         {
             return Operation(Top, value);
         }
-        private double Operation(Node q, int value)
+        private double Operation(Node q, double value)
         {
             if (q != null)
             {
@@ -213,9 +213,8 @@ namespace Parametric_Function
             }
             return 1;
         }
-        private double TrigGo(string s, Node q, int value)
+        private double TrigGo(string s, Node q, double value)
         {
-            double y = 0;
             double x = Operation(q, value);
             switch (s)
             {
@@ -240,7 +239,6 @@ namespace Parametric_Function
                 default:
                     throw new Exception();
             }
-            return 0;
         }
     }
 }

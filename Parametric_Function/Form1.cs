@@ -15,8 +15,6 @@ namespace Parametric_Function
         public Form1()
         {
             InitializeComponent();
-            //Y = new MyTree();
-            //draw = new Paint(TreePic.Width, TreePic.Height);
             act = new ActForm(PicBox.Width, PicBox.Height, this);
         }
         private void Form1_Load(object sender, EventArgs e)
@@ -30,7 +28,7 @@ namespace Parametric_Function
                 string y = YInput.Text.Replace(" ", "");
                 x = x.ToLower();
                 y = y.ToLower();
-                act.Parsing(x, y);
+                act.Parsing(x, y, Convert.ToInt32(StartBox.Text), Convert.ToInt32(EndBox.Text), Convert.ToDouble(StepBox.Text));
             }
             catch
             {
@@ -48,6 +46,10 @@ namespace Parametric_Function
         public void ReDraw(Bitmap bt)
         {
             PicBox.Image = bt;
+        }
+        private void trackBar1_Scroll(object sender, EventArgs e)
+        {
+            act.Scale = trackBar1.Value;
         }
     }
 }

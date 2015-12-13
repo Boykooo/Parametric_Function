@@ -15,6 +15,18 @@ namespace Parametric_Function
         private TreeParsing Ypars;
         private Paint draw;
         private IForm form;
+        private float scale;
+        private int start, end;
+        private double step;
+        public float Scale
+        {
+            get { return scale; }
+            set 
+            {
+                scale = value;
+                form.ReDraw(draw.DrawGraph(graph.Build(Xpars, Ypars, start, end, step), value));
+            }
+        }
         public ActForm(int wh, int ht, IForm form)
         {
             draw = new Paint(wh, ht);
@@ -22,6 +34,7 @@ namespace Parametric_Function
             Ypars = new TreeParsing();
             graph = new BuildGraph();
             this.form = form;
+            scale = 30;
         }
         private void XParsing(string expr)
         {
@@ -33,11 +46,14 @@ namespace Parametric_Function
             Ypars = new TreeParsing();
             Ypars.StartParsing(expr);
         }
-        public void Parsing(string X, string Y)
+        public void Parsing(string X, string Y, int start, int end, double step)
         {
             XParsing(X);
             YParsing(Y);
-            form.ReDraw(draw.DrawGraph(graph.Build(Xpars, Ypars)));
+            this.start = start;
+            this.end = end;
+            this.step = step;
+            form.ReDraw(draw.DrawGraph(graph.Build(Xpars, Ypars, start, end, step), Scale));
         }
         public void ShowTree(Expr ex)
         {

@@ -3,16 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 
 namespace Parametric_Function
 {
     class Paint
     {
-        Point center;
+        private Point center;
         private Bitmap mainBT;
         private Pen myPen;
-        private int diam = 40, padding = 50; // magic!
+        private int diam = 40, padding = 50; // отступ наверно
         private int wh, ht;
+        private Pen penGraph;
         public Paint(int wh, int ht)
         {
             mainBT = new Bitmap(wh, ht);
@@ -20,6 +22,7 @@ namespace Parametric_Function
             this.ht = ht;
             myPen = new Pen(Color.Blue, 2.1F);
             center = new Point(wh / 2, ht / 2);
+            penGraph = new Pen(Color.Blue, 2.5f);
         }
         public Bitmap DrawTree(Node top)
         {
@@ -53,22 +56,23 @@ namespace Parametric_Function
 
             }
         }
-        public Bitmap DrawGraph(PointF[] arrPoints)
+        public Bitmap DrawGraph(PointF[] arrPoints, float scale)
         {
+            PointF[] scalePoint = arrPoints;
             using (Graphics g = Graphics.FromImage(mainBT))
             {
                 g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
                 g.Clear(Color.White);
                 g.DrawLine(Pens.Black, new Point(0, center.Y), new Point(center.X * 2, center.Y));
                 g.DrawLine(Pens.Black, new Point(center.X, 0), new Point(center.X, center.Y * 2));
-                for (int i = 0; i < arrPoints.Length; i++)
+                for (int i = 0; i < scalePoint.Length; i++)
                 {
-                    arrPoints[i].X *= 30;
-                    arrPoints[i].Y *= 30;
-                    arrPoints[i].X += center.X;
-                    arrPoints[i].Y += center.Y;
+                    scalePoint[i].X *= scale;
+                    scalePoint[i].Y *= scale;
+                    scalePoint[i].X += center.X;
+                    scalePoint[i].Y += center.Y;
                 }
-                g.DrawCurve(Pens.Black, arrPoints);
+                g.DrawCurve(penGraph, scalePoint);
             }
             return mainBT;
         }

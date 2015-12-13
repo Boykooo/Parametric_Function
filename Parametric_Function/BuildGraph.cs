@@ -8,23 +8,32 @@ namespace Parametric_Function
 {
     class BuildGraph
     {
-        public PointF[] Build(TreeParsing x, TreeParsing y)
+        public PointF[] Build(TreeParsing x, TreeParsing y, int start, int end, double step)
         {
-            PointF[] points = new PointF[50];
-            int value = -5;
+            PointF[] points = new PointF[Math.Abs(start) + Math.Abs(end)];
+            double st = start;
             for (int i = 0; i < points.Length; i++)
             {
-                points[i] = NewPoint(x, y, value);
-                value += 1;
-                if (value == 0)
-                    value++;
+                points[i] = NewPoint(x, y, st, step);
+                st += step;
             }
             return points;
         }
-        private PointF NewPoint(TreeParsing x, TreeParsing y, int value)
+        private PointF NewPoint(TreeParsing x, TreeParsing y, double value, double step)
         {
-            float xValue = (float)x.GetValue(value);
-            float yValue = (float)y.GetValue(value);
+            float xValue = 0;
+            float yValue = 0;
+            try
+            {
+                xValue = (float)x.GetValue(value);
+                yValue = (float)y.GetValue(value);
+            }
+            catch
+            {
+                value += step;
+                xValue = (float)x.GetValue(value);
+                yValue = (float)y.GetValue(value);
+            }
             return new PointF(xValue, yValue);
         }
     }
